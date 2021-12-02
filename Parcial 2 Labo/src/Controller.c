@@ -91,7 +91,7 @@ int controller_ListLibros(LinkedList* pArrayListLibros, LinkedList* listaEditori
 
 
 	retorno =-1;
-	printf("\nID\t\tTITULO\t\tAUTOR\tPRECIO\tID EDITORIAL\n");
+	printf("\nID\t\tTITULO\t\tAUTOR\t\tPRECIO\t\tID EDITORIAL\n");
 
 	len = ll_len(pArrayListLibros);
 	if(pArrayListLibros != NULL)
@@ -103,7 +103,7 @@ int controller_ListLibros(LinkedList* pArrayListLibros, LinkedList* listaEditori
 			retorno =0;
 			}
 	}
-	printf("\nID\t\tTITULO\t\tAUTOR\tPRECIO\tID EDITORIAL\n");
+	printf("\nID\t\tTITULO\t\tAUTOR\t\tPRECIO\t\tID EDITORIAL\n");
 
     return retorno;
 }
@@ -185,14 +185,15 @@ int controller_sortLibros(LinkedList* pArrayListLibros, LinkedList* pArrayEditor
  * \return int
  *
  */
+
 int controller_saveAsText(char* path , LinkedList* pArrayListLibro)
 {
 	int   retorno = -1;
 	int   tamLista;
 
 	int   id;
-	char  titulo[20];
-	char  autor[20];
+	char  titulo[50];
+	char  autor[50];
 	float precio;
 	int   idEditorial;
 
@@ -214,10 +215,11 @@ int controller_saveAsText(char* path , LinkedList* pArrayListLibro)
 	            for (int i = 0; i < tamLista; i++)
 	            {
 	                pLibro = (eLibro*) ll_get(pArrayListLibro, i);
-	                if(Libro_getId(pLibro, &id)!=-1
-	                &&Libro_getTitulo(pLibro, titulo) !=-1
-					&&Libro_getAutor(pLibro, autor)!=-1
-	                &&Libro_getPrecio(pLibro, &precio) !=-1
+
+	                if(Libro_getId(pLibro,&id)!=-1
+	                &&Libro_getTitulo(pLibro,titulo) !=-1
+					&&Libro_getAutor(pLibro,autor)!=-1
+	                &&Libro_getPrecio(pLibro,&precio) !=-1
 					&&Libro_getIdEditorial(pLibro, &idEditorial)!=-1)
 	                {
 	                	fprintf(pFile,"%d,%s,%s,%.2f,%d\n",id,titulo,autor,precio,idEditorial);
@@ -230,6 +232,7 @@ int controller_saveAsText(char* path , LinkedList* pArrayListLibro)
 	    }
 	    return retorno;
 }
+
 
 int controller_filtrarLibros(LinkedList* listaLibros,LinkedList* listaEditoriales)
 {
@@ -254,73 +257,24 @@ int controller_filtrarLibros(LinkedList* listaLibros,LinkedList* listaEditoriale
 	return retorno;
 }
 
-
-
-/** \brief Guarda los datos de los empleados en el archivo data.csv (modo binario).
- *
- * \param path char*
- * \param pArrayListEmployee LinkedList*
- * \return int
- *
- */
-/*int controller_saveAsBinary(char* path , LinkedList* pArrayListLibro)
+int controller_MapearLibros(LinkedList* listaLibros)
 {
 
 	int retorno = -1;
 
-	FILE* pFile;
 
-	pFile = fopen(path, "wb"); // escribe en binario
-
-	eLibro* pLibro;
-
-	int tamLista = ll_len(pArrayListLibro);
-
-	if (pArrayListLibro != NULL)
+	if(ll_map(listaLibros,mapearEditorial)!=-1)
 	{
-		for (int i = 0; i < tamLista; i++)
-		{
-			pLibro = (eLibro*) ll_get(pArrayListLibro, i);
+		printf("Mapea bien");
+	}
 
-			fwrite(pLibro, sizeof(eLibro), 1, pFile);
-		}
-
-		fclose(pFile);
-
+	if(controller_saveAsText("ListaMapeada.csv",listaLibros)!= -1)
+	{
 		retorno = 0;
-
-	}
-	else
-	{
-		printf("No hay Datos\n");
 	}
 
 	return retorno;
 }
 
-*/
-
-/*static int saveId(char* PATH, int auxId)
-{
-	int retorno;
-	retorno =-1;
-	FILE* pFile;
-
-	if(PATH != NULL)
-	{
-
-		pFile= fopen(PATH,"w");
-		if (pFile!=NULL)
-		{
-			fprintf(pFile,"%d",auxId);
-			retorno = 0;
-			fclose(pFile);
-		}
-
-	}
-
-	return retorno;
-}
-*/
 
 

@@ -39,8 +39,8 @@ eLibro* CrearNuevoLibro(int* idAsignar);
 int UltimoId(char* PATH, char* cadena);
 
 int libro_CompararPorAutor(void* valor1, void* valor2);
-
 int filtrarMinotauro(void*libro);
+int mapearEditorial(void*libro);
 /*int empleado_CompararPorSueldo(void* valor1, void* valor2);
 int empleado_CompararPorHorasTrabajadas(void* valor1, void* valor2);
 int empleado_CompararPorId(void* valor1, void* valor2);

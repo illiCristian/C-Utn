@@ -93,7 +93,13 @@ int parser_LibroFromBinary(FILE* pFile , LinkedList* pArrayListEmployee)
 }
 
 
-//------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------
+/// @fn int parser_EditorialFromText(FILE*, LinkedList*)
+/// @brief
+///
+/// @param pFile
+/// @param pArrayListEditorial
+/// @return
 int parser_EditorialFromText(FILE* pFile , LinkedList* pArrayListEditorial)
 {
 	int retorno;

@@ -102,11 +102,22 @@ int main(void)
 
 			case 6:
 
+				if(controller_MapearLibros(listaLibros)!=-1)
+				{
+					printf("Se genero la lista correctamente \n");
+				}
 
 				break;
 
 			case 7:
-
+    			if(ll_deleteLinkedList(listaLibros)!=-1)
+    			{
+    				printf("Cerrado exitoso \n");
+    			}
+    			if(ll_deleteLinkedList(listaEditoriales)!=-1)
+    			 {
+    			    printf("Cerrado exitoso \n");
+    			 }
 				break;
 
 		}

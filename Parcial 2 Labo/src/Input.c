@@ -12,13 +12,13 @@ int MostrarMenu ()
          printf("3. Ordenar la lista generada “Autor” de manera ascendente.. \n");
          printf("4. Imprimir por pantalla todos los datos de los libros. \n");
          printf("5. Realizar un listado de los libros de la editorial MINOTAURO.. \n");
-         printf("6. Salir \n");
-        // printf("7. Ordenar empleados. \n");
+         printf("6. Mapear. \n");
+         printf("7. Salir \n");
         // printf("8. Guardar los datos de los empleados en el archivo data.csv (modo texto). \n");
 
          fflush(stdin);
 
-         opcionIngresada = PedirUnEnteroRango("Ingrese una opcion:", 1, 16);
+         opcionIngresada = PedirUnEnteroRango("Ingrese una opcion:", 1, 8);
 
          return opcionIngresada;
 }

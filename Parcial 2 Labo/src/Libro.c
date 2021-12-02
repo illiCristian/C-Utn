@@ -1,6 +1,14 @@
 #include "Libro.h"
 
-
+/// @fn eLibro Libro_newParametros*(char*, char*, char*, char*, char*)
+/// @brief
+///
+/// @param id
+/// @param titulo
+/// @param autor
+/// @param precio
+/// @param idEditorial
+/// @return
 eLibro* Libro_newParametros(char* id,char* titulo,char* autor,char* precio,char* idEditorial)
 {
 	eLibro* pLibro;
@@ -24,7 +32,12 @@ eLibro* Libro_newParametros(char* id,char* titulo,char* autor,char* precio,char*
 }
 
 
-
+/// @fn int Libro_setId(eLibro*, int)
+/// @brief
+///
+/// @param this
+/// @param id
+/// @return
 int Libro_setId(eLibro* this,int id)
 {
 	int retorno;
@@ -39,6 +52,12 @@ int Libro_setId(eLibro* this,int id)
 
 	return retorno;
 }
+/// @fn int Libro_getId(eLibro*, int*)
+/// @brief
+///
+/// @param this
+/// @param id
+/// @return
 int Libro_getId(eLibro* this,int* id)
 {
 	int retorno;
@@ -51,7 +70,12 @@ int Libro_getId(eLibro* this,int* id)
 
 	return retorno;
 }
-
+/// @fn int Libro_setIdEditorial(eLibro*, int)
+/// @brief
+///
+/// @param this
+/// @param idEditorial
+/// @return
 int Libro_setIdEditorial(eLibro* this,int idEditorial)
 {
 	int retorno;
@@ -66,6 +90,12 @@ int Libro_setIdEditorial(eLibro* this,int idEditorial)
 
 	return retorno;
 }
+/// @fn int Libro_getIdEditorial(eLibro*, int*)
+/// @brief
+///
+/// @param this
+/// @param idEditorial
+/// @return
 int Libro_getIdEditorial(eLibro* this,int* idEditorial)
 {
 	int retorno;
@@ -78,7 +108,12 @@ int Libro_getIdEditorial(eLibro* this,int* idEditorial)
 
 	return retorno;
 }
-
+/// @fn int Libro_setTitulo(eLibro*, char*)
+/// @brief
+///
+/// @param this
+/// @param titulo
+/// @return
 int Libro_setTitulo(eLibro* this,char* titulo)
 {
 	int retorno;
@@ -92,6 +127,12 @@ int Libro_setTitulo(eLibro* this,char* titulo)
 
 	    return retorno;
 }
+/// @fn int Libro_getTitulo(eLibro*, char*)
+/// @brief
+///
+/// @param this
+/// @param titulo
+/// @return
 int Libro_getTitulo(eLibro* this,char* titulo)
 {
 	int retorno;
@@ -104,6 +145,12 @@ int Libro_getTitulo(eLibro* this,char* titulo)
 
 	return retorno;
 }
+/// @fn int Libro_setTAutor(eLibro*, char*)
+/// @brief
+///
+/// @param this
+/// @param autor
+/// @return
 int Libro_setTAutor(eLibro* this,char* autor)
 {
 	int retorno;
@@ -117,6 +164,12 @@ int Libro_setTAutor(eLibro* this,char* autor)
 
 	    return retorno;
 }
+/// @fn int Libro_getAutor(eLibro*, char*)
+/// @brief
+///
+/// @param this
+/// @param autor
+/// @return
 int Libro_getAutor(eLibro* this,char* autor)
 {
 	int retorno;
@@ -129,7 +182,12 @@ int Libro_getAutor(eLibro* this,char* autor)
 
 	return retorno;
 }
-
+/// @fn int Libro_setPrecio(eLibro*, float)
+/// @brief
+///
+/// @param this
+/// @param precio
+/// @return
 int Libro_setPrecio(eLibro* this,float precio)
 {
 	int retorno;
@@ -143,6 +201,12 @@ int Libro_setPrecio(eLibro* this,float precio)
 
 	return retorno;
 }
+/// @fn int Libro_getPrecio(eLibro*, float*)
+/// @brief
+///
+/// @param this
+/// @param precio
+/// @return
 int Libro_getPrecio(eLibro* this,float* precio)
 {
 	int retorno;
@@ -180,7 +244,10 @@ int Libro_getSueldo(Employee* this,int* sueldo)
 	}
 	return retorno;
 }*/
-
+/// @fn eLibro Libro_new*()
+/// @brief
+///
+/// @return
 eLibro* Libro_new()
 {
 	eLibro* pLibro;
@@ -189,7 +256,10 @@ eLibro* Libro_new()
 
 	return pLibro;
 }
-
+/// @fn void Libro_delete(eLibro*)
+/// @brief
+///
+/// @param this
 void Libro_delete(eLibro* this)
 {
 	if(this!=NULL)
@@ -198,7 +268,11 @@ void Libro_delete(eLibro* this)
 	        this=NULL;
 	    }
 }
-
+/// @fn void imprimirUnLibro(eLibro*, LinkedList*)
+/// @brief
+///
+/// @param this
+/// @param listaEditoriales
 void imprimirUnLibro(eLibro* this, LinkedList* listaEditoriales)
 {
 	int   id;
@@ -231,14 +305,14 @@ void imprimirUnLibro(eLibro* this, LinkedList* listaEditoriales)
 	   		 if(idEditorial == idEditorialAux)
 	   		 {
 
-	   			 Editorial_getNombre(pEditorial, nombreAux);
-
+	   			 Editorial_getNombre(pEditorial,nombreAux);
 	   		 }
 		 }
-	   	printf("%d\t%15s\t\t%15st\t%.2f\t\t%s\n",id,titulo,autor,precio,nombreAux);
+	   	printf("%d\t%15s\t%15st\t%.2f\t\t%s\n",id,titulo,autor,precio,nombreAux);
 	   }
 	}
 }
+
 
 
 
@@ -278,7 +352,12 @@ void imprimirUnLibro(eLibro* this, LinkedList* listaEditoriales)
 }
 
 */
-
+/// @fn int UltimoId(char*, char*)
+/// @brief
+///
+/// @param PATH
+/// @param cadena
+/// @return
 int UltimoId(char* PATH, char* cadena)
 {
 	int retorno;
@@ -297,6 +376,12 @@ int UltimoId(char* PATH, char* cadena)
 	return retorno;
 }
 //-----------------------------------------------------------------------------------------------------
+/// @fn int libro_CompararPorAutor(void*, void*)
+/// @brief
+///
+/// @param valor1
+/// @param valor2
+/// @return
 int libro_CompararPorAutor(void* valor1, void* valor2) // respeta el prototipo que pide el sort
 {
 	int rtn;
@@ -311,6 +396,12 @@ int libro_CompararPorAutor(void* valor1, void* valor2) // respeta el prototipo q
 
 	return rtn;
 }
+/// @fn int empleado_CompararPorId(void*, void*)
+/// @brief
+///
+/// @param valor1
+/// @param valor2
+/// @return
 int empleado_CompararPorId(void* valor1, void* valor2)
 {
 	int retorno = 0;
@@ -334,6 +425,12 @@ int empleado_CompararPorId(void* valor1, void* valor2)
 	}
 	return retorno;
 }
+/// @fn int empleado_CompararPorSueldo(void*, void*)
+/// @brief
+///
+/// @param valor1
+/// @param valor2
+/// @return
 int empleado_CompararPorSueldo(void* valor1, void* valor2)
 {
 	int retorno = 0;
@@ -358,6 +455,11 @@ int empleado_CompararPorSueldo(void* valor1, void* valor2)
 	return retorno;
 }
 //--------------------------------------------------------------------------
+/// @fn int filtrarMinotauro(void*)
+/// @brief
+///
+/// @param libro
+/// @return
 int filtrarMinotauro(void*libro)
 {
 	int retorno = 0;
@@ -377,4 +479,42 @@ int filtrarMinotauro(void*libro)
 
 	return retorno;
 }
+//----------------------------------------------------------------------------------
+int mapearEditorial(void*libro)
+{
+	int retorno = -1;
+	int idEditorialAux;
+	float precioAux;
+	float precioNuevo;
+
+	/*
+	 *  PLANETA: 20% (si el monto es mayor o igual a $300)
+	 * SIGLO XXI EDITORES: 10% (si el monto es menor o igual a $200)
+	 */
+	if(libro != NULL)
+	{
+		Libro_getIdEditorial(libro, &idEditorialAux);
+		Libro_getPrecio(libro, &precioAux);
+
+		if(idEditorialAux == 1 && precioAux >= 300)
+		{
+			precioNuevo = precioAux - precioAux*20/100;
+			retorno = Libro_setPrecio(libro,precioNuevo);
+		}
+		else
+		{
+			if (idEditorialAux == 2 && precioAux <= 200)
+			{
+			precioNuevo = precioAux - precioAux*10/100;
+			retorno = Libro_setPrecio(libro, precioNuevo);
+			}
+		}
+	}
+
+	return retorno;
+}
+
+
+
+
 

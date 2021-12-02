@@ -586,5 +586,27 @@ LinkedList* ll_filter(LinkedList *arrayLibros, int (*pFunc)(void*))
 }
 
 
+/**
+ * @brief  Modifica campos de un elemento de la lista this segun la funcion pFunc.
+ * @param  this
+ * @param  pFunc
+ * @return Retorna una lista con campos modificados.
+ */
+int ll_map(LinkedList* this, int (*pFunc)(void*))
+{
+    int returnAux =-1;
+
+    if(this != NULL && pFunc != NULL)
+    {
+        for(int i = 0 ; i< ll_len(this);  i++)
+        {
+
+             pFunc(ll_get(this,i));
+
+        }
+        returnAux=0;
+    }
+    return returnAux;
+}
 
 

@@ -14,3 +14,4 @@ int controller_filtrarLibros(LinkedList* listaLibros,LinkedList* listaEditoriale
 
 int controller_saveAsText(char* path , LinkedList* pArrayListLibro);
 
+int controller_MapearLibros(LinkedList* listaLibros);
